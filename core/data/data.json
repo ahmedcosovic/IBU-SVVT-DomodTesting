@@ -1,6 +1,7 @@
 {
     "links": {
         "home": "https://domod.ba",
-        "search": "https://domod.ba/pretraga?keywords=s23"
+        "search": "https://domod.ba/pretraga?keywords=s23",
+        "subcat": "https://domod.ba/shop/bijela-tehnika/sporeti/elektricni-sporeti"
     }
 }
