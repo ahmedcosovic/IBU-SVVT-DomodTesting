@@ -50,6 +50,7 @@ export default class BasePage {
     async fillText(element: WebElement, text: String): Promise<void> {
         //await element.click();
         await element.sendKeys(text);
+        await this.waitSeconds(1);
     }
     async getParentElement(element: WebElement): Promise<WebElement | null> {
         const parentElement = await this.driver.executeScript("return arguments[0].parentNode;", element);
