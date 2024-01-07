@@ -21,17 +21,31 @@ beforeAll(async () => {
 
 
 test("Filtering in sub-category", async () => {
+    await homePage.findAndClick(By.id("dropdownMenu1"));
+    await homePage.findAndClick(By.partialLinkText(sort));
+
     await homePage.findAndClick(By.id("dropdownMenu2"));
     const otvorenMeni = await driver.findElement(By.className("dropdown-menu"));
     const opcije = await otvorenMeni.findElement(By.xpath('//label[contains(text(), "'+ brend +'")]'));
     const checkboxid = await opcije.getAttribute("for");
     await driver.findElement(By.id(checkboxid)).click();
 
-    await homePage.findAndClick(By.id("dropdownMenu1"));
-    await homePage.findAndClick(By.partialLinkText(sort));
+    await homePage.findAndClick(By.id("dropdownMenu3"));
+    const nouibase = await driver.findElement(By.className("noUiSlider"));
+    await homePage.setSliderLeft(nouibase,44);
+    await homePage.findAndClick(By.id("dropdownMenu3"));
+    await homePage.setSliderRight(nouibase,-40);
+
+    await homePage.waitSeconds(1);
 
     const itemList = await driver.findElement(By.className("item-list"));
     const items = await itemList.findElements(By.tagName("span"));
+
+    const donja = await driver.findElement(By.className("range_min"));
+    const gornja = await driver.findElement(By.className("range_max"));
+
+    const donjaGranica = parseInt(await donja.getText());
+    const gornjaGranica = parseInt(await donja.getText());
 
     let prvi = 1;
     let kontrola = 1;
@@ -39,6 +53,8 @@ test("Filtering in sub-category", async () => {
     for (const item of items) {
         let priceAttribute = await item.getAttribute("data-price");
         let price = parseFloat(priceAttribute);
+        expect(price).toBeLessThanOrEqual(gornjaGranica);
+        expect(price).toBeGreaterThanOrEqual(donjaGranica);
         if (price!=null) {
             if (prvi == 1) {
                 prvi = 0;
@@ -54,6 +70,8 @@ test("Filtering in sub-category", async () => {
         }
     }
     expect(kontrola).toEqual(1);
+
+    await homePage.waitSeconds(5);
 }, 30000);
 
 
