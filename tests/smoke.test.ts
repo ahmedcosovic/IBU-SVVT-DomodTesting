@@ -17,7 +17,7 @@ beforeAll(async () => {
 }, 30000);
 
 
-test("Subscribe to Domod newsletter", async () => {
+test("Purchasing a product", async () => {
     const searchBox = await driver.findElement(By.className("search-box"));
     await homePage.fillText(searchBox, keyword);
     await homePage.findAndClick(By.className("i-search"));
