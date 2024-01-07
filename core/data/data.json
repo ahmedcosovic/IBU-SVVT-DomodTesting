@@ -28,6 +28,16 @@
         "address": "address1",
         "jmbg": "1234567891234"
     },
+    "shipping": {
+        "fullname": "Test User",
+        "email": "test123@gmail.com",
+        "phone": "061123456",
+        "city": "Testopia",
+        "pcode": "42424",
+        "country": "Smoketestia",
+        "address": "Testing Purposes 1",
+        "delivery_msg": "Don't deliver, this is a test."
+    },
     "katalozi": {
         "link": "/assets/files/catalogs/1700655991-konkurs.pdf"
     }
