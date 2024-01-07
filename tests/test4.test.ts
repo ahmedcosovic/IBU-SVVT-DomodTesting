@@ -11,8 +11,6 @@ let driver: WebDriver;
 let homePage: HomePage;
 let sort = "Cijena (najniža)";
 let brend = "Gorenje";
-let minPrice = 600;
-let maxPrice = 800;
 
 beforeAll(async () => {
     driver = await createDriver(dataJson.links.subcat);
