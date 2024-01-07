@@ -29,7 +29,7 @@ test("Sub-categories", async () => {
     const scElement = await driver.findElement(By.partialLinkText(subCat));
     await driver.wait(until.elementLocated(By.partialLinkText(subCat)), 10000);
     
-    const elementSaStringom = await driver.executeScript("return arguments[0].parentNode;", scElement);
+    const elementSaStringom = await homePage.getParentElement(scElement);
     const stringSaBrojem = await elementSaStringom.getText();
     let brojArtikalaString = stringSaBrojem.substring(stringSaBrojem.indexOf('(')+1);
     brojArtikalaString = brojArtikalaString.substring(0,brojArtikalaString.indexOf(')'));

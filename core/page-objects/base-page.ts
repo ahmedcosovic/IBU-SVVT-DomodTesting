@@ -51,4 +51,8 @@ export default class BasePage {
         //await element.click();
         await element.sendKeys(text);
     }
+    async getParentElement(element: WebElement): Promise<WebElement | null> {
+        const parentElement = await this.driver.executeScript("return arguments[0].parentNode;", element);
+        return parentElement;
+    }
 }

@@ -5,6 +5,11 @@ let driver;
 
 export async function createDriver(url : string) {
     const chromeOptions = new chrome.Options();
+    chromeOptions.setUserPreferences({
+        "download.prompt_for_download": false,
+        "download.directory_upgrade": true,
+        "plugins.always_open_pdf_externally": true,
+    });
     driver = await new Builder().forBrowser("chrome").setChromeOptions(chromeOptions).build();
     await driver.get(url);
     await driver.manage().window().maximize();

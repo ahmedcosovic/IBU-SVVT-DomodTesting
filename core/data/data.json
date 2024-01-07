@@ -14,5 +14,8 @@
         "phone": "061 123 456",
         "city": "Zenica",
         "msg": "testna poruka"
+    },
+    "katalozi": {
+        "link": "/assets/files/catalogs/1700655991-konkurs.pdf"
     }
 }
