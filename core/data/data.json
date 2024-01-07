@@ -2,6 +2,17 @@
     "links": {
         "home": "https://domod.ba",
         "search": "https://domod.ba/pretraga?keywords=s23",
-        "subcat": "https://domod.ba/shop/bijela-tehnika/sporeti/elektricni-sporeti"
+        "subcat": "https://domod.ba/shop/bijela-tehnika/sporeti/elektricni-sporeti",
+        "product": "https://domod.ba/shop/proizvod/tv-philips-43pus7608-12-smart/PH43PUS7608",
+        "job": "https://domod.ba/zaposlenje",
+        "catalogs": "https://domod.ba/katalozi"
+    },
+    "jobinfo": {
+        "name": "Test",
+        "surname": "User",
+        "email": "test123@gmail.com",
+        "phone": "061 123 456",
+        "city": "Zenica",
+        "msg": "testna poruka"
     }
 }
